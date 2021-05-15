@@ -1,0 +1,156 @@
+<html>
+
+<body>
+    <p id = "demo"></p>
+</body>
+
+<script>
+    //---- arrays ---------//
+    let cars = ["volvo", "Bentley", "Audi"];
+    document.getElementById("demo").innerHTML = cars;
+
+    let BMW = cars[0];
+    document.getElementById("demo").innerHTML = BMW;
+
+    //---- length of the array -----//
+    let len = cars.length;
+    document.getElementById("demo").innerHTML = len;
+
+    let last = cars[cars.length - 1];
+    document.getElementById("demo").innerHTML = last;
+
+    //---loop over an array------------//
+    cars.forEach((item, index, array) => {console.log(item, index);});
+
+    //-----------toString() = convert array to string ----//
+    document.getElementById("demo").innerHTML = cars.toString();
+
+    //------------ pop() = remove last array element --------//
+    let last1 = cars.pop();
+    document.getElementById("demo").innerHTML = last1;
+    last2 = cars[cars.length - 1];
+    console.log(last2);
+
+    //---- push = to add new element to the end of array --------//
+    cars.push("Tesla");
+    document.getElementById("demo").innerHTML = cars;
+
+    //----------shift() = to remove the first element of array----------//
+    cars.shift();
+    document.getElementById("demo").innerHTML = cars;
+
+    //----unshift() = to add element ---------------//
+    cars.unshift("Toyota", "Jagua");
+    document.getElementById("demo").innerHTML = cars
+
+    //-------concatenation -----------------
+    let bikes = ["Yamaha", "Suzuki", "Royal Enfied"];
+    let vehicles = cars.concat(bikes);
+    document.getElementById("demo").innerHTML = vehicles;
+
+    //----------- sort() ----ascending order -----------
+    vehicles.sort();
+    document.getElementById("demo").innerHTML = vehicles;
+
+    //-----------reverse().. sort in descending order
+    vehicles.reverse();
+    document.getElementById("demo").innerHTML = vehicles;
+
+    //-------- array map() create new arrays and perform function on each element----------
+    let array1 = [2,3,4,5,6,7];
+    let num1 = array1.map(multiply);
+    function multiply(value){
+        return value *2;
+    }
+    document.getElementById("demo").innerHTML = num1;
+
+    //------filter()..takes each array elements and applies cond statement to it.---
+    let num2 = array1.filter(comp);
+    function comp(value){
+        return value > 4;
+    }
+    document.getElementById("demo").innerHTML = num2
+
+    // --------------reduce() --reduces an array down to just one value using a function---
+    let num3 = array1.reduce(sum)
+    function sum(total, value){
+        return total + value;
+    }
+    document.getElementById("demo").innerHTML = num3
+
+
+    //------------for loop in Js------------------------
+/*  let x;
+    for (x=0; x<5; x++)
+        console.log(x)
+
+    // -----------while loop----------------
+    let x=1;
+    while(x<6){
+        console.log(x)
+        x++
+    }
+
+
+    //----Do while loop ------------
+    let x=5;
+    do{
+        console.log(x)
+        x++
+    }
+    while(x<10)
+
+
+    // --------- loop break out -----------
+    let x;
+    for (x=1;x<=10;x++){
+        console.log(x)
+        if(x==5)
+            break
+    }
+
+
+    // ---- skipping a loop cycle with CONTINUE ------
+    let x;
+    for (x=1;x<=10;x++)
+    {
+        if (x==3){
+            continue;
+        }
+        console.log(x)
+    }
+*/
+
+//---------------- creating an object -------------
+// method1 (var)
+var student = 
+{
+    name: "Chris",
+    age : 21,
+    studies: "computer engineering",
+};
+document.getElementById("demo").innerHTML = student.name+" who is "+ student.age+"years old studies " + student.studies
+
+// method 2 (new)
+    var student = new Object();
+    student.name= "Chris",
+    student.age = 20,
+    student.studies= "computer engineering";
+    document.getElementById("demo").innerHTML = student.name+" who is "+ student.age+"years old studies " + student.studies
+
+// method 3 - function
+function stud(name, age, studies){
+    this.name = name;
+    this.age = age;
+    this.studies = studies;
+}
+var student = stud("chris", 21, "computer science");
+document.getElementById("demo").innerHTML = student.name+" who is "+ student.age+"years old studies " + student.studies
+
+
+
+
+</script>
+
+
+</html>
